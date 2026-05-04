@@ -1,5 +1,3 @@
-/* Windows 7 desktop layout — home.html */
-
 *,
 *::before,
 *::after {
@@ -20,14 +18,12 @@ body.desktop {
     overflow-x: hidden;
 }
 
-/* Layer windows above wallpaper */
 .desktop-area {
     position: relative;
     min-height: calc(100vh - 42px);
     padding: clamp(12px, 3vw, 28px) clamp(12px, 2vw, 24px) 56px;
 }
 
-/* window.png is 500×500 — slice picks title bar + frame */
 .win7-window {
     position: absolute;
     border-style: solid;
@@ -60,7 +56,6 @@ body.desktop {
     min-width: 0;
 }
 
-/* Welcome */
 .win-welcome {
     left: 4%;
     top: 5%;
@@ -73,17 +68,16 @@ body.desktop {
 }
 
 .avatar {
-    width: 96px;
-    height: 96px;
+    width: 150px;
+    height: 150px;
+    background-repeat: no-repeat;
     margin: 0 auto 12px;
     border-radius: 4px;
-    background: linear-gradient(145deg, #6eb8ff, #2a6fd4);
-    color: #fff;
+    background: url(/imgs/avatar.png);
     font-size: 32px;
     font-weight: 600;
     line-height: 96px;
     text-align: center;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35), 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
 .name {
@@ -106,7 +100,6 @@ body.desktop {
     color: #222;
 }
 
-/* Me + Contact center tiles */
 .win-me {
     right: 4%;
     top: 5%;
@@ -181,7 +174,6 @@ body.desktop {
     display: block;
 }
 
-/* Links (largest) */
 .win-links {
     left: 50%;
     top: 50%;
@@ -207,7 +199,6 @@ body.desktop {
     margin-top: 4px;
 }
 
-/* Socials */
 .win-socials {
     left: 4%;
     bottom: 10%;
@@ -246,7 +237,6 @@ body.desktop {
     display: block;
 }
 
-/* Taskbar */
 .taskbar {
     position: fixed;
     left: 0;
@@ -269,13 +259,6 @@ body.desktop {
     padding-right: 6px;
 }
 
-.start-orb {
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    background: radial-gradient(circle at 35% 30%, #8fd65a 0%, #4a9e2e 42%, #2d6a1a 100%);
-    box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.45), 0 1px 3px rgba(0, 0, 0, 0.5);
-}
 
 .taskbar-quick {
     display: flex;
@@ -286,13 +269,6 @@ body.desktop {
     border-right: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-.ql-icon {
-    width: 36px;
-    height: 34px;
-    border-radius: 3px;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(0, 0, 0, 0.12) 100%);
-    border: 1px solid rgba(0, 0, 0, 0.2);
-}
 
 .taskbar-spacer {
     flex: 1;
@@ -332,7 +308,12 @@ body.desktop {
     background: linear-gradient(90deg, rgba(255, 255, 255, 0.18) 0%, rgba(0, 0, 0, 0.12) 100%);
 }
 
-/* Narrow screens: stack as a column */
+nav {
+    background: url(imgs/placeholder.png);
+    display: flex;
+    align-self: flex-end;
+}
+
 @media (max-width: 720px) {
     .desktop-area {
         position: relative;
@@ -364,12 +345,12 @@ body.desktop {
 
     .win7-window {
         position: relative;
-        left: auto !important;
-        right: auto !important;
-        top: auto !important;
-        bottom: auto !important;
-        transform: none !important;
-        width: 100% !important;
+        left: auto;
+        right: auto;
+        top: auto;
+        bottom: auto;
+        transform: none;
+        width: 100%;
         max-width: 420px;
         margin-left: auto;
         margin-right: auto;
