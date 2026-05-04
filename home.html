@@ -3,31 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
+    <title>Justin Ayala — Portfolio</title>
+    <link rel="stylesheet" href="index.css">
 </head>
-<body>
-    <section>
-        <h2> Justin Ayala</h2>
-        <h3> Web Designer</h3>
-        <p>Welcome to my portfolio! Here you can find samples of my previous projects such as Figma prototypes, websites, and more. Feel free to stick around and enjoy my website!</p>
-    </section> 
-    <section>
-        <img src="/imgs/github.svg" id="github" alt="GitHub">
-        <img src="/imgs/linkedin.png" id="linkedin" alt="LinkedIn">
-    </section>
-    <section>
-        <h3>Programming</h3>
-        <img src="/imgs/computadora.png" id="programming" alt="Programming">
-        <h3>Writing</h3>
-        <img src="/imgs/write.png" id="writing" alt="Writing">
-    </section>
-    <section>
-        <h3>About me</h3>
-        <img src="/imgs/aboutme.png" id="about" alt="About Me">
-    </section>
-    <section>
-        <h3>Contact</h3>
-        <img src="/imgs/connection.png" id="contact" alt="Contact">
-    </section>
+<body class="desktop">
+    <main class="desktop-area" aria-label="Portfolio desktop">
+        <!-- Welcome -->
+        <section class="win7-window win-welcome" aria-labelledby="win-welcome-title">
+            <h2 id="win-welcome-title" class="win7-title">Welcome!</h2>
+            <div class="win7-body win7-body--welcome">
+                <div class="avatar" role="img" aria-label="Justin Ayala">JA</div>
+                <p class="name">Justin Ayala</p>
+                <p class="tagline">Web Designer</p>
+                <p class="welcome-text">Welcome to my portfolio! Here you can find samples of my previous projects such as Figma prototypes, websites, and more. Feel free to stick around and enjoy my website!</p>
+            </div>
+        </section>
+
+        <!-- Me -->
+        <section class="win7-window win-me" aria-labelledby="win-me-title">
+            <h2 id="win-me-title" class="win7-title">Me</h2>
+            <div class="win7-body win7-body--center">
+                <a class="tile-link" href="aboutme.html">
+                    <span class="tile-label">About Me</span>
+                    <span class="tile tile--about">
+                        <img src="imgs/aboutme.png" width="72" height="72" alt="">
+                    </span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Links -->
+        <section class="win7-window win-links" aria-labelledby="win-links-title">
+            <h2 id="win-links-title" class="win7-title">Links</h2>
+            <div class="win7-body win7-body--links">
+                <a class="tile-link tile-link--horizontal" href="programming.html">
+                    <span class="tile tile--wide">
+                        <img src="imgs/computadora.png" width="100" height="80" alt="">
+                    </span>
+                    <span class="tile-label">Programming</span>
+                </a>
+                <a class="tile-link tile-link--horizontal" href="writing.html">
+                    <span class="tile tile--wide">
+                        <img src="imgs/write.png" width="100" height="80" alt="">
+                    </span>
+                    <span class="tile-label">Writing</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Socials -->
+        <section class="win7-window win-socials" aria-labelledby="win-socials-title">
+            <h2 id="win-socials-title" class="win7-title">Socials</h2>
+            <div class="win7-body win7-body--socials">
+                <a class="social-link" href="#" title="GitHub">
+                    <img src="imgs/github.svg" width="88" height="88" alt="GitHub">
+                </a>
+                <a class="social-link" href="#" title="LinkedIn">
+                    <img src="imgs/linkedin.png" width="88" height="88" alt="LinkedIn">
+                </a>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section class="win7-window win-contact" aria-labelledby="win-contact-title">
+            <h2 id="win-contact-title" class="win7-title">Contact</h2>
+            <div class="win7-body win7-body--center">
+                <a class="tile-link" href="contact.html">
+                    <span class="tile-label">Contact</span>
+                    <span class="tile tile--contact">
+                        <img src="imgs/connection.png" width="80" height="80" alt="">
+                    </span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="taskbar" role="contentinfo">
+        <div class="taskbar-start" aria-hidden="true">
+            <span class="start-orb"></span>
+        </div>
+        <div class="taskbar-quick" aria-hidden="true">
+            <span class="ql-icon ql-folder"></span>
+            <span class="ql-icon ql-ie"></span>
+            <span class="ql-icon ql-mail"></span>
+            <span class="ql-icon ql-wmp"></span>
+        </div>
+        <div class="taskbar-spacer"></div>
+        <div class="taskbar-tray">
+            <span class="tray-icons" aria-hidden="true"></span>
+            <time class="taskbar-clock" datetime="2010-09-30T10:10">10:10 AM 9/30/2010</time>
+        </div>
+        <button type="button" class="show-desktop" title="Show desktop" aria-label="Show desktop"></button>
+    </footer>
 </body>
 </html>
