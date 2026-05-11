@@ -5,14 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Justin Ayala — Portfolio</title>
+    <link rel="stylesheet" href="https://unpkg.com/7.css@0.21.1/dist/7.scoped.css">
     <link rel="stylesheet" href="home.css">
 </head>
 
 <body class="desktop">
-    <main class="desktop-area" aria-label="Portfolio desktop">
-        <section class="win7-window win-welcome" aria-labelledby="win-welcome-title">
-            <h2 id="win-welcome-title" class="win7-title">Welcome!</h2>
-            <div class="win7-body win7-body--welcome">
+    <main class="desktop-area win7">
+        <section class="window active win7-window win-welcome">
+            <div class="title-bar">
+                <h2 id="win-welcome-title" class="title-bar-text">Welcome!</h2>
+                <div class="title-bar-controls">
+                    <button type="button" aria-label="Minimize"></button>
+                    <button type="button" aria-label="Maximize"></button>
+                    <button type="button" aria-label="Close"></button>
+                </div>
+            </div>
+            <div class="window-body win7-body win7-body--welcome">
                 <div class="avatar"></div>
                 <p class="name">Justin Ayala</p>
                 <p class="tagline">Web Designer</p>
@@ -21,9 +29,16 @@
             </div>
         </section>
 
-        <section class="win7-window win-me" aria-labelledby="win-me-title">
-            <h2 id="win-me-title" class="win7-title">Me</h2>
-            <div class="win7-body win7-body--center">
+        <section class="window active win7-window win-me">
+            <div class="title-bar">
+                <h2 id="win-me-title" class="title-bar-text">Me</h2>
+                <div class="title-bar-controls">
+                    <button type="button" aria-label="Minimize"></button>
+                    <button type="button" aria-label="Maximize"></button>
+                    <button type="button" aria-label="Close"></button>
+                </div>
+            </div>
+            <div class="window-body win7-body win7-body--center">
                 <a class="tile-link" href="aboutme.html">
                     <span class="tile-label">About Me</span>
                     <span class="tile tile--about">
@@ -33,9 +48,16 @@
             </div>
         </section>
 
-        <section class="win7-window win-links" aria-labelledby="win-links-title">
-            <h2 id="win-links-title" class="win7-title">Links</h2>
-            <div class="win7-body win7-body--links">
+        <section class="window active win7-window win-links">
+            <div class="title-bar">
+                <h2 id="win-links-title" class="title-bar-text">Links</h2>
+                <div class="title-bar-controls">
+                    <button type="button" aria-label="Minimize"></button>
+                    <button type="button" aria-label="Maximize"></button>
+                    <button type="button" aria-label="Close"></button>
+                </div>
+            </div>
+            <div class="window-body win7-body win7-body--links">
                 <a class="tile-link tile-link--horizontal" href="programming.html">
                     <span class="tile tile--wide">
                         <img src="imgs/computadora.png" width="100" height="80" alt="">
@@ -51,9 +73,16 @@
             </div>
         </section>
 
-        <section class="win7-window win-socials" aria-labelledby="win-socials-title">
-            <h2 id="win-socials-title" class="win7-title">Socials</h2>
-            <div class="win7-body win7-body--socials">
+        <section class="window active win7-window win-socials">
+            <div class="title-bar">
+                <h2 id="win-socials-title" class="title-bar-text">Socials</h2>
+                <div class="title-bar-controls">
+                    <button type="button" aria-label="Minimize"></button>
+                    <button type="button" aria-label="Maximize"></button>
+                    <button type="button" aria-label="Close"></button>
+                </div>
+            </div>
+            <div class="window-body win7-body win7-body--socials">
                 <a class="social-link" href="#" title="GitHub">
                     <img src="imgs/github.svg" width="88" height="88" alt="GitHub">
                 </a>
@@ -63,9 +92,16 @@
             </div>
         </section>
 
-        <section class="win7-window win-contact" aria-labelledby="win-contact-title">
-            <h2 id="win-contact-title" class="win7-title">Contact</h2>
-            <div class="win7-body win7-body--center">
+        <section class="window active win7-window win-contact">
+            <div class="title-bar">
+                <h2 id="win-contact-title" class="title-bar-text">Contact</h2>
+                <div class="title-bar-controls">
+                    <button type="button" aria-label="Minimize"></button>
+                    <button type="button" aria-label="Maximize"></button>
+                    <button type="button" aria-label="Close"></button>
+                </div>
+            </div>
+            <div class="window-body win7-body win7-body--center">
                 <a class="tile-link" href="contact.html">
                     <span class="tile-label">Contact</span>
                     <span class="tile tile--contact">
@@ -75,9 +111,164 @@
             </div>
         </section>
     </main>
-    <nav class="placeholder">
-        <div id="win-bar"></div>
+    <nav class="taskbar">
+        <div class="taskbar-start">
+            <button type="button" class="taskbar-start-btn" aria-label="Start">
+                <img src="imgs/start.png" class="taskbar-orb" width="38" height="38" alt="" decoding="async">
+            </button>
+        </div>
+        <div class="taskbar-quick">
+            <a class="taskbar-pin" href="aboutme.html" title="About Me">
+                <img src="imgs/aboutme.png" width="24" height="24" alt="">
+            </a>
+            <a class="taskbar-pin" href="programming.html" title="Programming">
+                <img src="imgs/computadora.png" width="24" height="24" alt="">
+            </a>
+            <a class="taskbar-pin" href="writing.html" title="Writing">
+                <img src="imgs/write.png" width="24" height="24" alt="">
+            </a>
+            <a class="taskbar-pin" href="contact.html" title="Contact">
+                <img src="imgs/connection.png" width="24" height="24" alt="">
+            </a>
+        </div>
+        <div class="taskbar-spacer"></div>
+        <div class="taskbar-tray">
+            <div class="taskbar-tray-glyphs">
+                <span class="taskbar-tray-icon">
+                    <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                        <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                    </svg>
+                </span>
+                <span class="taskbar-tray-icon">
+                    <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor">
+                        <path d="M3 14V8l5-3 5 3v6H3z" opacity="0.85" />
+                    </svg>
+                </span>
+                <span class="taskbar-tray-icon">
+                    <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                        <rect x="2" y="5" width="6" height="5" rx="0.5" stroke="currentColor" stroke-width="1.2" />
+                        <rect x="8" y="6" width="6" height="4" rx="0.5" stroke="currentColor" stroke-width="1.2" />
+                    </svg>
+                </span>
+                <span class="taskbar-tray-icon">
+                    <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                        <path d="M4 10c1.5-2 6.5-2 8 0" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" />
+                        <path d="M6 6h4M8 4v4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" />
+                    </svg>
+                </span>
+            </div>
+            <div class="taskbar-clock">
+                <time id="taskbar-time" datetime="">
+                    <span class="taskbar-clock-time"></span>
+                    <span class="taskbar-clock-date"></span>
+                </time>
+            </div>
+        </div>
+        <button type="button" class="show-desktop" aria-label="Show desktop"></button>
     </nav>
+
+    <script src="draggable-windows.js"></script>
+    <script>
+        (function () {
+            // #region agent log (layout-debug)
+            function agentLog(hypothesisId, message, data) {
+                fetch('http://127.0.0.1:7625/ingest/5df3f4a4-b095-495c-b4fa-d14a974ed722', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'X-Debug-Session-Id': '3a44e2' },
+                    body: JSON.stringify({
+                        sessionId: '3a44e2',
+                        runId: 'pre-fix',
+                        hypothesisId: hypothesisId,
+                        location: 'home.html:layout-debug',
+                        message: message,
+                        data: data || {},
+                        timestamp: Date.now()
+                    })
+                }).catch(function () { });
+            }
+            function snapshotLayout(tag) {
+                var mq = window.matchMedia && window.matchMedia('(max-width: 720px)');
+                agentLog('H_viewport', 'viewport', {
+                    tag: tag,
+                    href: String(location.href),
+                    innerWidth: window.innerWidth,
+                    innerHeight: window.innerHeight,
+                    devicePixelRatio: window.devicePixelRatio,
+                    mqMax720: mq ? mq.matches : null
+                });
+
+                var sheets = Array.prototype.slice.call(document.styleSheets || []).map(function (s) {
+                    return { href: s.href || '(inline)', disabled: !!s.disabled };
+                });
+                agentLog('H_stylesheets', 'stylesheets', { tag: tag, sheets: sheets });
+
+                var nodes = [
+                    '.win7-window.win-welcome',
+                    '.win7-window.win-me',
+                    '.win7-window.win-links',
+                    '.win7-window.win-socials',
+                    '.win7-window.win-contact'
+                ];
+                var computed = {};
+                nodes.forEach(function (sel) {
+                    var el = document.querySelector(sel);
+                    if (!el) {
+                        computed[sel] = { exists: false };
+                        return;
+                    }
+                    var cs = window.getComputedStyle(el);
+                    computed[sel] = {
+                        exists: true,
+                        position: cs.position,
+                        zIndex: cs.zIndex,
+                        top: cs.top,
+                        right: cs.right,
+                        bottom: cs.bottom,
+                        left: cs.left,
+                        width: cs.width,
+                        transform: cs.transform
+                    };
+                });
+                agentLog('H_computed', 'computed-window-styles', { tag: tag, computed: computed });
+            }
+            snapshotLayout('script-start');
+            // #endregion agent log (layout-debug)
+
+            var timeEl = document.querySelector(".taskbar-clock-time");
+            var dateEl = document.querySelector(".taskbar-clock-date");
+            var timeRoot = document.getElementById("taskbar-time");
+            function tick() {
+                var d = new Date();
+                if (timeEl) {
+                    timeEl.textContent = d.toLocaleTimeString(undefined, {
+                        hour: "numeric",
+                        minute: "2-digit",
+                        second: "2-digit"
+                    });
+                }
+                if (dateEl) {
+                    dateEl.textContent = d.toLocaleDateString(undefined, {
+                        month: "numeric",
+                        day: "numeric",
+                        year: "numeric"
+                    });
+                }
+                if (timeRoot) {
+                    timeRoot.dateTime = d.toISOString();
+                }
+            }
+            tick();
+            setInterval(tick, 1000);
+
+            // #region agent log (layout-debug-onload)
+            if (document.readyState === 'complete') {
+                snapshotLayout('ready-complete');
+            } else {
+                window.addEventListener('load', function () { snapshotLayout('window-load'); }, { once: true });
+            }
+            // #endregion agent log (layout-debug-onload)
+        })();
+    </script>
 
 </body>
 

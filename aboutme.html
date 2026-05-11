@@ -1,26 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me</title>
+    <link rel="stylesheet" href="https://unpkg.com/7.css@0.21.1/dist/7.scoped.css">
+    <link rel="stylesheet" href="aboutme.css">
 </head>
-<body>
-    <section>
-        <h2>Justin Ayala</h2>
-        <p>Hi! I’m Justin, a web developer and creative from California. From 2025-2026, I attended the Web Application CART class and learned how to develop websites during my time there. I’m passionate in creating things like music and websites, hoping to show my skills and personality for the world to see!</p>
-    </section>
-    <section>
-        <p>My first lab option was Web Application and luckily, I got into it! During my time in CART, I had many difficult challenges. At first, I was really scared to code and wonder if I could even make websites by scratch. For example, one of our earlier projects, PawPal, was really difficult to code, mainly because of tight deadlines. Not only that, but I had to style many elements in CSS, which was a whole trial and error process. Being unable to know where to start off is also something difficult, but once you get into the rhythm, it starts to feel much better. Later on, I worked with on a budget calculator project, which changed my perspective on coding and apply different techniques. A bit ago, I wanted to implement a visual live chart into my calculator, but it was really difficult. Solving that problem felt extremely liberating and freeing. But, I didn’t just do all of this by myself. I learned from many others and by collaborating with others, I got to see how others thought about a certain process, which helped my thoughts about coding even more. Near the end of the school year, we started to use complex logic such as DOM manipulation and different chains of methods, really showing how far I have come since the beginning of the year (I would have never expected to be able to do that). This final project will be the culmination of the whole year; evidence that I have truly developed my skills and become a developer that is ready to build solutions to problems. Over the next five years, I hope to transition into creating more music by studying audio production and refining my craft. Throughout the years, I am going to release original songs and build up my image on social media and create a dedicated fanbase.</p>
-        <img src="/imgs/CART.png" id="CART" alt="CART logo">
-    </section>
-    <section>
-        <h2>Resume</h2>
-        <img src="/imgs/Resume.png" id="Resume" alt="Resume">
-    </section>
-    <section>
-        <h3>Achievements and Hobbies</h3>
-        <p>Throughout my high school years so far, I have received principal honors and high honor roll awards, as well as top 1 medals from band competitions. Speaking about, one of my hobbies is music, as well as writing. For now, I don’t intend to post any of my works here (yet), so I hope that’s alright!</p>
-    </section>
+
+<body class="desktop">
+    <main class="desktop-area win7">
+        <section class="window active win7-window win-about">
+            <div class="title-bar">
+                <h2 id="about-title" class="title-bar-text">About Me</h2>
+                <div class="title-bar-controls">
+                    <button type="button" aria-label="Minimize"></button>
+                    <button type="button" aria-label="Maximize"></button>
+                    <button type="button" aria-label="Close"></button>
+                </div>
+            </div>
+            <div class="window-body about-body">
+                <div class="about-top">
+                    <div class="about-profile">
+                        <div class="about-avatar"></div>
+                        <div class="about-name">Justin Ayala</div>
+                    </div>
+                    <div class="about-note">
+                        <p>Hi! I’m Justin, a web developer and creative from California. From 2025-2026, I attended the
+                            Web Application CART class and learned how to develop websites during my time there. I’m
+                            passionate in creating things like music and websites, hoping to show my skills and
+                            personality for the world to see!</p>
+                    </div>
+                </div>
+
+                <div class="about-bottom">
+                    <div class="about-story has-scrollbar">
+                        <p>My first lab option was Web Application and luckily, I got into it! During my time in CART, I
+                            had many difficult challenges. At first, I was really scared to code and wonder if I could
+                            even make websites by scratch. For example, one of our earlier projects, PawPal, was really
+                            difficult to code, mainly because of tight deadlines. Not only that, but I had to style many
+                            elements in CSS, which was a whole trial and error process. Being unable to know where to
+                            start off is also something difficult, but once you get into the rhythm, it starts to feel
+                            much better. Later on, I worked with on a budget calculator project, which changed my
+                            perspective on coding and apply different techniques. A bit ago, I wanted to implement a
+                            visual live chart into my calculator, but it was really difficult. Solving that problem felt
+                            extremely liberating and freeing. But, I didn’t just do all of this by myself. I learned from
+                            many others and by collaborating with others, I got to see how others thought about a certain
+                            process, which helped my thoughts about coding even more. Near the end of the school year, we
+                            started to use complex logic such as DOM manipulation and different chains of methods, really
+                            showing how far I have come since the beginning of the year (I would have never expected to
+                            be able to do that). This final project will be the culmination of the whole year; evidence
+                            that I have truly developed my skills and become a developer that is ready to build solutions
+                            to problems. Over the next five years, I hope to transition into creating more music by
+                            studying audio production and refining my craft. Throughout the years, I am going to release
+                            original songs and build up my image on social media and create a dedicated fanbase.</p>
+                    </div>
+                    <div class="about-cart">
+                        <img class="cart-logo" src="imgs/CART.png" width="120" height="120" alt="CART">
+                        <img class="about-figure" src="imgs/sitguy.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="window active win7-window win-resume">
+            <div class="title-bar">
+                <h2 id="resume-title" class="title-bar-text">Resume</h2>
+                <div class="title-bar-controls">
+                    <button type="button" aria-label="Minimize"></button>
+                    <button type="button" aria-label="Maximize"></button>
+                    <button type="button" aria-label="Close"></button>
+                </div>
+            </div>
+            <div class="window-body resume-body">
+                <div class="resume-icon">
+                    <img src="imgs/Resume.png" width="86" height="86" alt="Resume icon">
+                </div>
+                <a class="resume-download" href="#" title="Download resume">
+                    <span>Download here if you wish!</span>
+                    <span class="resume-arrow">⬇</span>
+                </a>
+            </div>
+        </section>
+
+        <section class="window active win7-window win-disc">
+            <div class="title-bar">
+                <div class="title-bar-text"> </div>
+                <div class="title-bar-controls">
+                    <button type="button" aria-label="Close"></button>
+                </div>
+            </div>
+            <div class="window-body disc-body">
+                <img class="disc-img" src="imgs/disc.png" alt="">
+            </div>
+        </section>
+
+        <section class="window active win7-window win-achievements">
+            <div class="title-bar">
+                <h2 id="achievements-title" class="title-bar-text">Achievements and Hobbies</h2>
+                <div class="title-bar-controls">
+                    <button type="button" aria-label="Minimize"></button>
+                    <button type="button" aria-label="Maximize"></button>
+                    <button type="button" aria-label="Close"></button>
+                </div>
+            </div>
+            <div class="window-body achievements-body">
+                <p>Throughout my high school years so far, I have received principal honors and high honor roll awards,
+                    as well as top 1 medals from band competitions. Speaking about, one of my hobbies is music, as well
+                    as writing. For now, I don’t intend to post any of my works here (yet), so I hope that’s alright!</p>
+            </div>
+        </section>
+    </main>
+
+    <nav class="taskbar">
+        <div class="taskbar-start">
+            <button type="button" class="taskbar-start-btn" aria-label="Start">
+                <img src="imgs/start.png" class="taskbar-orb" width="38" height="38" alt="" decoding="async">
+            </button>
+        </div>
+        <div class="taskbar-quick">
+            <a class="taskbar-pin" href="aboutme.html" title="About Me">
+                <span class="taskbar-pin-dot"></span>
+                <img src="imgs/avatar.png" width="24" height="24" alt="">
+            </a>
+            <a class="taskbar-pin" href="programming.html" title="Programming">
+                <img src="imgs/placeholder.png" width="24" height="24" alt="">
+            </a>
+            <a class="taskbar-pin" href="writing.html" title="Writing">
+                <img src="imgs/placeholder.png" width="24" height="24" alt="">
+            </a>
+            <a class="taskbar-pin" href="contact.html" title="Contact">
+                <img src="imgs/placeholder.png" width="24" height="24" alt="">
+            </a>
+        </div>
+        <div class="taskbar-spacer"></div>
+        <div class="taskbar-tray">
+            <div class="taskbar-tray-glyphs">
+                <span class="taskbar-tray-icon">
+                    <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                        <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                    </svg>
+                </span>
+                <span class="taskbar-tray-icon">
+                    <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor">
+                        <path d="M3 14V8l5-3 5 3v6H3z" opacity="0.85" />
+                    </svg>
+                </span>
+                <span class="taskbar-tray-icon">
+                    <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                        <rect x="2" y="5" width="6" height="5" rx="0.5" stroke="currentColor" stroke-width="1.2" />
+                        <rect x="8" y="6" width="6" height="4" rx="0.5" stroke="currentColor" stroke-width="1.2" />
+                    </svg>
+                </span>
+                <span class="taskbar-tray-icon">
+                    <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                        <path d="M4 10c1.5-2 6.5-2 8 0" stroke="currentColor" stroke-width="1.3"
+                            stroke-linecap="round" />
+                        <path d="M6 6h4M8 4v4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" />
+                    </svg>
+                </span>
+            </div>
+            <div class="taskbar-clock">
+                <time id="taskbar-time" datetime="">
+                    <span class="taskbar-clock-time"></span>
+                    <span class="taskbar-clock-date"></span>
+                </time>
+            </div>
+        </div>
+        <button type="button" class="show-desktop" aria-label="Show desktop"></button>
+    </nav>
+
+    <script src="draggable-windows.js"></script>
+    <script>
+        (function () {
+            var timeEl = document.querySelector(".taskbar-clock-time");
+            var dateEl = document.querySelector(".taskbar-clock-date");
+            var timeRoot = document.getElementById("taskbar-time");
+            function tick() {
+                var d = new Date();
+                if (timeEl) {
+                    timeEl.textContent = d.toLocaleTimeString(undefined, {
+                        hour: "numeric",
+                        minute: "2-digit",
+                        second: "2-digit"
+                    });
+                }
+                if (dateEl) {
+                    dateEl.textContent = d.toLocaleDateString(undefined, {
+                        month: "numeric",
+                        day: "numeric",
+                        year: "numeric"
+                    });
+                }
+                if (timeRoot) {
+                    timeRoot.dateTime = d.toISOString();
+                }
+            }
+            tick();
+            setInterval(tick, 1000);
+        })();
+    </script>
 </body>
+
 </html>

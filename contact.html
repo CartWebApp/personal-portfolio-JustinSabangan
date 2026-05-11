@@ -5,23 +5,141 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
+    <link rel="stylesheet" href="https://unpkg.com/7.css@0.21.1/dist/7.scoped.css">
+    <link rel="stylesheet" href="contact.css">
 </head>
 
-<body>
-    <section>
-        <img src="/imgs/contact.png" id="Connection" alt="Contact">
-        <p>Hey there! Want to learn more about me or what I do? You’re in luck because I have a contact form right here!
-            Just put in the information into the form and I’ll respond as soon as I can. Thanks for your interest!</p>
-    </section>
-    <form action="action_page.php">
-        <label for="fname">First Name</label>
-        <input type="text" id="fname" name="firstname" placeholder="Your name..">
-        <label for="lname">Email</label>
-        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-        <label for="subject">Subject</label>
-        <textarea id="subject" name="subject" placeholder="Type message here..."></textarea>
-        <input type="submit" value="Submit">
-    </form>
+<body class="desktop">
+    <main class="desktop-area win7">
+        <section class="window active win7-window win-contact-main">
+            <div class="title-bar">
+                <h2 class="title-bar-text">Contact me!</h2>
+                <div class="title-bar-controls">
+                    <button type="button" aria-label="Minimize"></button>
+                    <button type="button" aria-label="Maximize"></button>
+                    <button type="button" aria-label="Close"></button>
+                </div>
+            </div>
+            <div class="window-body contact-body">
+                <div class="contact-top">
+                    <img class="contact-icon" src="imgs/contact.png" width="92" height="92" alt="">
+                    <div class="contact-bubble">
+                        <p>Hey there! Want to learn more about me or what I do? You’re in luck because I have a contact
+                            form right here! Just put in the information into the form and I’ll respond as soon as I
+                            can. Thanks for your interest!</p>
+                    </div>
+                </div>
+
+                <form class="contact-form" action="#" method="post">
+                    <label class="contact-field">
+                        <span class="contact-label">Name:</span>
+                        <input type="text" name="name" placeholder="">
+                    </label>
+
+                    <label class="contact-field">
+                        <span class="contact-label">Email:</span>
+                        <input type="email" name="email" placeholder="">
+                    </label>
+
+                    <label class="contact-field contact-field--message">
+                        <span class="contact-label">Type message here...</span>
+                        <textarea name="message"></textarea>
+                    </label>
+
+                    <div class="contact-actions">
+                        <button class="contact-submit" type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <nav class="taskbar">
+        <div class="taskbar-start">
+            <button type="button" class="taskbar-start-btn" aria-label="Start">
+                <img src="imgs/start.png" class="taskbar-orb" width="38" height="38" alt="" decoding="async">
+            </button>
+        </div>
+        <div class="taskbar-quick">
+            <a class="taskbar-pin" href="aboutme.html" title="About Me">
+                <img src="imgs/aboutme.png" width="24" height="24" alt="">
+            </a>
+            <a class="taskbar-pin" href="programming.html" title="Programming">
+                <img src="imgs/computadora.png" width="24" height="24" alt="">
+            </a>
+            <a class="taskbar-pin" href="writing.html" title="Writing">
+                <img src="imgs/write.png" width="24" height="24" alt="">
+            </a>
+            <a class="taskbar-pin" href="contact.html" title="Contact">
+                <img src="imgs/connection.png" width="24" height="24" alt="">
+            </a>
+        </div>
+        <div class="taskbar-spacer"></div>
+        <div class="taskbar-tray">
+            <div class="taskbar-tray-glyphs">
+                <span class="taskbar-tray-icon">
+                    <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                        <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                    </svg>
+                </span>
+                <span class="taskbar-tray-icon">
+                    <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor">
+                        <path d="M3 14V8l5-3 5 3v6H3z" opacity="0.85" />
+                    </svg>
+                </span>
+                <span class="taskbar-tray-icon">
+                    <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                        <rect x="2" y="5" width="6" height="5" rx="0.5" stroke="currentColor" stroke-width="1.2" />
+                        <rect x="8" y="6" width="6" height="4" rx="0.5" stroke="currentColor" stroke-width="1.2" />
+                    </svg>
+                </span>
+                <span class="taskbar-tray-icon">
+                    <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                        <path d="M4 10c1.5-2 6.5-2 8 0" stroke="currentColor" stroke-width="1.3"
+                            stroke-linecap="round" />
+                        <path d="M6 6h4M8 4v4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" />
+                    </svg>
+                </span>
+            </div>
+            <div class="taskbar-clock">
+                <time id="taskbar-time" datetime="">
+                    <span class="taskbar-clock-time"></span>
+                    <span class="taskbar-clock-date"></span>
+                </time>
+            </div>
+        </div>
+        <button type="button" class="show-desktop" aria-label="Show desktop"></button>
+    </nav>
+
+    <script>
+        (function () {
+            var timeEl = document.querySelector(".taskbar-clock-time");
+            var dateEl = document.querySelector(".taskbar-clock-date");
+            var timeRoot = document.getElementById("taskbar-time");
+            function tick() {
+                var d = new Date();
+                if (timeEl) {
+                    timeEl.textContent = d.toLocaleTimeString(undefined, {
+                        hour: "numeric",
+                        minute: "2-digit",
+                        second: "2-digit"
+                    });
+                }
+                if (dateEl) {
+                    dateEl.textContent = d.toLocaleDateString(undefined, {
+                        month: "numeric",
+                        day: "numeric",
+                        year: "numeric"
+                    });
+                }
+                if (timeRoot) {
+                    timeRoot.dateTime = d.toISOString();
+                }
+            }
+            tick();
+            setInterval(tick, 1000);
+        })();
+    </script>
 </body>
 
 </html>
