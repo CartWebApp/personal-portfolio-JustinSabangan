@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-page="home">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Justin Ayala — Portfolio</title>
-    <link rel="stylesheet" href="https://unpkg.com/7.css@0.21.1/dist/7.scoped.css">
-    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="site.css">
 </head>
 
 <body class="desktop">
@@ -118,17 +117,23 @@
             </button>
         </div>
         <div class="taskbar-quick">
+            <a class="taskbar-pin" href="home.html" title="Home">
+                <img src="imgs/world.png" width="24" height="24" alt="">
+            </a>
             <a class="taskbar-pin" href="aboutme.html" title="About Me">
-                <img src="imgs/placeholder.png" width="24" height="24" alt="">
+                <img src="imgs/avatar.png" width="24" height="24" alt="">
             </a>
             <a class="taskbar-pin" href="programming.html" title="Programming">
-                <img src="imgs/placeholder.png" width="24" height="24" alt="">
+                <img src="imgs/computadora.png" width="24" height="24" alt="">
             </a>
             <a class="taskbar-pin" href="writing.html" title="Writing">
-                <img src="imgs/placeholder.png" width="24" height="24" alt="">
+                <img src="imgs/write.png" width="24" height="24" alt="">
             </a>
             <a class="taskbar-pin" href="contact.html" title="Contact">
-                <img src="imgs/placeholder.png" width="24" height="24" alt="">
+                <img src="imgs/connection.png" width="24" height="24" alt="">
+            </a>
+            <a class="taskbar-pin" href="resume.html" title="Resume">
+                <img src="imgs/resume.png" width="24" height="24" alt="Resume">
             </a>
         </div>
         <div class="taskbar-spacer"></div>
@@ -167,8 +172,11 @@
         <button type="button" class="show-desktop" aria-label="Show desktop"></button>
     </nav>
 
+    <script src="button-ding.js"></script>
     <script src="draggable-windows.js"></script>
-    
+    <script src="bubbles.js" defer></script>
+    <script src="page-bgm.js" data-src="audio/music/Logging%20In%204.mp3" defer></script>
+    <script src="taskbar-clock.js"></script>
 
 </body>
 

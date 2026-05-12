@@ -1,158 +1,391 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-page="programming">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Programming Projects</title>
+    <link rel="stylesheet" href="site.css">
 </head>
 
-<body>
-    <article id="Bioshield">
-        <section>
-            <img src="/imgs/programming.png" class="file" alt="Programming">
-            <h2>Project 1 BioShield</h2>
-            <p>The first website that I worked on alongside a partner replicating a bug repellent store.</p>
-        </section>
-        <section>
-            <h2>Problems & Solutions</h2>
-            <ul>
-                <li>The Problem: We tried to figure out the main color palette of the website.
-                </li>
-                <li>The Solution: We researched other bug repellent websites and figured out what colors would work best
-                    with our main motto and represent the site well.
-                </li>
-                <li>The Problem: With a small amount of knowledge in CSS, it was a bit difficult to style the website.
-                </li>
-                <li>The Solution: We searched up different CSS selectors and the main syntax of CSS, trying to figure
-                    out what we can style.
-                </li>
-                <li>The Problem: HTML was something that we knew already, but figuring out what each element should be
-                    semantically was an issue.
-                </li>
-                <li>The Solution: Websites like MDN and W3Schools helped out a lot with deciding what a “div” should be
-                    semantically.
-                </li>
-            </ul>
-        </section>
-        <section>
-            <h2>Concepts learned</h2>
-            <ul>
-                <li>Semantic Architecture: During this time, I only knew HTML, so I minimized the use of divs as much as
-                    I could.
-                </li>
+<body class="desktop">
+    <main class="desktop-area win7 programming-page">
+        <div id="project-picker" class="programming-picker">
+            <section class="window active win7-window win-picker win-picker-bioshield" data-project="bioshield">
+                <div class="title-bar">
+                    <h2 class="title-bar-text">Project 1 — BioShield</h2>
+                    <div class="title-bar-controls">
+                        <button type="button" aria-label="Minimize"></button>
+                        <button type="button" aria-label="Maximize"></button>
+                        <button type="button" aria-label="Close"></button>
+                    </div>
+                </div>
+                <div class="window-body prog-picker-body">
+                    <button type="button" class="prog-picker-thumb" data-open="bioshield">
+                        <img src="imgs/bioshield.jpg" width="220" height="160" alt="Open BioShield project details">
+                    </button>
+                    <p class="prog-picker-hint">Click the image to read more</p>
+                </div>
+            </section>
 
-                <li>AI Literacy: At the time, I did not know how to code CSS3 and JavaScript, so me and my assigned
-                    partner used it to help style and code, expanding our knowledge too.</li>
-                <li>Graphic Design: In Adobe, I had to create images of fake bug repellents to represent our products.
-                </li>
-            </ul>
-        </section>
-        <section>
-            <h2>Habits of Mind</h2>
-            <ul>
-                <li>Persistence: Although we didn’t know CSS at the time, trying to figure out the syntax and elements
-                    to style the website was difficult. Trying to persevere through these challenges helped me gain a
-                    better understanding of the CSS even if we hadn’t learned it.
-                </li>
-                <li>Communication: I had to work with another student to complete this project, communicating any
-                    potential problems with the website or website designs.
-                </li>
-            </ul>
-        </section>
-    </article>
+            <section class="window active win7-window win-picker win-picker-zen" data-project="zengarden">
+                <div class="title-bar">
+                    <h2 class="title-bar-text">Project 2 — Zen Garden</h2>
+                    <div class="title-bar-controls">
+                        <button type="button" aria-label="Minimize"></button>
+                        <button type="button" aria-label="Maximize"></button>
+                        <button type="button" aria-label="Close"></button>
+                    </div>
+                </div>
+                <div class="window-body prog-picker-body">
+                    <button type="button" class="prog-picker-thumb" data-open="zengarden">
+                        <img src="imgs/zengarden.png" width="220" height="160" alt="Open Zen Garden project details">
+                    </button>
+                    <p class="prog-picker-hint">Click the image to read more</p>
+                </div>
+            </section>
 
-    <article id="CSSZen">
-        <section>
-            <img src="/imgs/programming.png" class="file" alt="Programming">
-            <h2>Project 2 Zen Garden</h2>
-            <p>A web design project created to demonstrate CSS to an unchanged HTML file</p>
-        </section>
-        <section>
-            <h2>Problems & Solutions</h2>
-            <ul>
-                <li>The Problem: Using all the selectors in a meaningful way to contribute to my design of the website
-                    was difficult.</li>
-                <li>The Solution: I tweaked the little things such as font size and details that might elevate the
-                    aesthetics.</li>
-                <li>The Problem: Finding an aesthetic that I wanted to use was pretty difficult. I spent hours trying to
-                    find a theme for my design.</li>
-                <li>The Solution: I thought about the media and entertainment that I really liked and looked at those
-                    aesthetics closely, which helped me finally decide on the aesthetic.</li>
-            </ul>
-        </section>
-        <section>
-            <h2>Concepts learned</h2>
-            <ul>
-                <li>CSS Styling: I had a basic knowledge of CSS selectors and only knew a few. In this project, my
-                    understanding increased and the usage of 42+ selectors helped my knowledge overall.</li>
-                <li>Graphic Design: For my main aesthetic, I had to design graphics for my headers. based on a video
-                    game aesthetic that I found to be cool to use.</li>
-            </ul>
-        </section>
-        <section>
-            <h2>Habits of Mind</h2>
-            <ul>
-                <li>Creativity and Innovation: Designing graphics and how I would execute my design expanded my
-                    creativity.</li>
-                <li>Application of Past Knowledge: Previously, I had done many CSS exercises to help me with layouts, so
-                    I applied that knowledge to help change the layout of my design.</li>
-            </ul>
-        </section>
-    </article>
+            <section class="window active win7-window win-picker win-picker-budget" data-project="budgetcalc">
+                <div class="title-bar">
+                    <h2 class="title-bar-text">Project 3 — Budget Calculator</h2>
+                    <div class="title-bar-controls">
+                        <button type="button" aria-label="Minimize"></button>
+                        <button type="button" aria-label="Maximize"></button>
+                        <button type="button" aria-label="Close"></button>
+                    </div>
+                </div>
+                <div class="window-body prog-picker-body">
+                    <button type="button" class="prog-picker-thumb" data-open="budgetcalc">
+                        <img src="imgs/budgetcalc.png" width="220" height="160" alt="Open Budget Calculator project details">
+                    </button>
+                    <p class="prog-picker-hint">Click the image to read more</p>
+                </div>
+            </section>
+        </div>
 
-    <article id="BudgetCalc">
-        <section>
-            <img src="/imgs/programming.png" class="file" alt="Programming">
-            <h2>Project 3 Budget Calculator</h2>
-            <p>A web-based budget calculator representing EECU that helps users calculate their expenses and manage
-                their
-                finances in a simple way.
-            </p>
-        </section>
-        <section>
-            <h2>Problems & Solutions</h2>
-            <ul>
-                <li>The Problem: I struggled with figuring out how to code a live visual chart in JavaScript</li>
-                <li>The Solution: I looked at the chart.js website to get some help on setting it up and did an exercise
-                    to understand the logic.
-                </li>
-                <li>The Problem: Many students worked on my project and rotated through each person. The problem that
-                    came from this was that when someone didn’t fully complete what they wanted to do on my website,
-                    they didn’t leave a comment, leaving the next person to possibly mess up the site or change
-                    something.
-                </li>
-                <li>The Solution: I had to tell the next person what they did and didn’t finish
-                </li>
-                <li>The Problem: Styling the website was difficult because I had to make the layout accurate to the
-                    Figma.
-                </li>
-                <li>The Solution: Eventually, I had to compromise and go for a different layout, which was fine and was
-                    similar to what I had prototyped.
-                </li>
-            </ul>
-        </section>
-        <section>
-            <h2>Concepts learned</h2>
-            <ul>
-                <li>Persistence: Doing some of the code and styling it took a lot of time. Overall, the coding was
-                    really challenging, but I just kept going no matter what.
-                </li>
-                <li>Communication: During the project, many other students helped code my website, so I had to
-                    communicate with them to get what I wanted out of their work time.
-                </li>
-            </ul>
-        </section>
-        <section>
-            <h2>Habits of Mind</h2>
-            <ul>
-                <li>Creativity and Innovation: Designing graphics and how I would execute my design expanded my
-                    creativity.</li>
-                <li>Application of Past Knowledge: Previously, I had done many CSS exercises to help me with layouts, so
-                    I applied that knowledge to help change the layout of my design.</li>
-            </ul>
-        </section>
-    </article>
+        <div id="detail-bioshield" class="programming-detail" hidden>
+            <div class="programming-detail-top">
+                <button type="button" class="programming-back" aria-label="Back to projects">
+                    <svg class="programming-back-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z" />
+                    </svg>
+                </button>
+            </div>
+            <div class="programming-detail-scroll">
+                <section class="window active win7-window prog-detail-window prog-detail-hero-screen detail-panel detail-panel--left">
+                    <div class="title-bar">
+                        <div class="title-bar-text">BioShield — Overview</div>
+                        <div class="title-bar-controls">
+                            <button type="button" aria-label="Minimize"></button>
+                            <button type="button" aria-label="Maximize"></button>
+                            <button type="button" aria-label="Close"></button>
+                        </div>
+                    </div>
+                    <div class="window-body prog-detail-body">
+                        <img class="prog-detail-hero" src="imgs/bioshield.jpg" width="120" height="90" alt="">
+                        <h2>Project 1 BioShield</h2>
+                        <p class="prog-detail-site">
+                            <a href="https://bioshieldyeah.netlify.app/" target="_blank" rel="noopener noreferrer">https://bioshieldyeah.netlify.app/</a>
+                        </p>
+                        <p>The first website that I worked on alongside a partner replicating a bug repellent store.</p>
+                    </div>
+                </section>
+
+                <section class="window active win7-window prog-detail-window prog-view-animate detail-panel detail-panel--right">
+                    <div class="title-bar">
+                        <div class="title-bar-text">Problems &amp; Solutions</div>
+                        <div class="title-bar-controls">
+                            <button type="button" aria-label="Minimize"></button>
+                            <button type="button" aria-label="Maximize"></button>
+                            <button type="button" aria-label="Close"></button>
+                        </div>
+                    </div>
+                    <div class="window-body prog-detail-body">
+                        <ul>
+                            <li>The Problem: We tried to figure out the main color palette of the website.</li>
+                            <li>The Solution: We researched other bug repellent websites and figured out what colors would work best with our main motto and represent the site well.</li>
+                            <li>The Problem: With a small amount of knowledge in CSS, it was a bit difficult to style the website.</li>
+                            <li>The Solution: We searched up different CSS selectors and the main syntax of CSS, trying to figure out what we can style.</li>
+                            <li>The Problem: HTML was something that we knew already, but figuring out what each element should be semantically was an issue.</li>
+                            <li>The Solution: Websites like MDN and W3Schools helped out a lot with deciding what a “div” should be semantically.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="window active win7-window prog-detail-window prog-view-animate detail-panel detail-panel--left">
+                    <div class="title-bar">
+                        <div class="title-bar-text">Concepts learned</div>
+                        <div class="title-bar-controls">
+                            <button type="button" aria-label="Minimize"></button>
+                            <button type="button" aria-label="Maximize"></button>
+                            <button type="button" aria-label="Close"></button>
+                        </div>
+                    </div>
+                    <div class="window-body prog-detail-body">
+                        <ul>
+                            <li>Semantic Architecture: During this time, I only knew HTML, so I minimized the use of divs as much as I could.</li>
+                            <li>AI Literacy: At the time, I did not know how to code CSS3 and JavaScript, so me and my assigned partner used it to help style and code, expanding our knowledge too.</li>
+                            <li>Graphic Design: In Adobe, I had to create images of fake bug repellents to represent our products.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="window active win7-window prog-detail-window prog-view-animate detail-panel detail-panel--right">
+                    <div class="title-bar">
+                        <div class="title-bar-text">Habits of Mind</div>
+                        <div class="title-bar-controls">
+                            <button type="button" aria-label="Minimize"></button>
+                            <button type="button" aria-label="Maximize"></button>
+                            <button type="button" aria-label="Close"></button>
+                        </div>
+                    </div>
+                    <div class="window-body prog-detail-body">
+                        <ul>
+                            <li>Persistence: Although we didn’t know CSS at the time, trying to figure out the syntax and elements to style the website was difficult. Trying to persevere through these challenges helped me gain a better understanding of the CSS even if we hadn’t learned it.</li>
+                            <li>Communication: I had to work with another student to complete this project, communicating any potential problems with the website or website designs.</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <div id="detail-zengarden" class="programming-detail" hidden>
+            <div class="programming-detail-top">
+                <button type="button" class="programming-back" aria-label="Back to projects">
+                    <svg class="programming-back-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z" />
+                    </svg>
+                </button>
+            </div>
+            <div class="programming-detail-scroll">
+                <section class="window active win7-window prog-detail-window prog-detail-hero-screen detail-panel detail-panel--left">
+                    <div class="title-bar">
+                        <div class="title-bar-text">Zen Garden — Overview</div>
+                        <div class="title-bar-controls">
+                            <button type="button" aria-label="Minimize"></button>
+                            <button type="button" aria-label="Maximize"></button>
+                            <button type="button" aria-label="Close"></button>
+                        </div>
+                    </div>
+                    <div class="window-body prog-detail-body">
+                        <img class="prog-detail-hero" src="imgs/zengarden.png" width="120" height="90" alt="">
+                        <h2>Project 2 Zen Garden</h2>
+                        <p class="prog-detail-site">
+                            <a href="https://github.com/CartWebApp/css-zen-garden-JustinSabangan" target="_blank" rel="noopener noreferrer">https://github.com/CartWebApp/css-zen-garden-JustinSabangan</a>
+                        </p>
+                        <p>A web design project created to demonstrate CSS to an unchanged HTML file</p>
+                    </div>
+                </section>
+
+                <section class="window active win7-window prog-detail-window prog-view-animate detail-panel detail-panel--right">
+                    <div class="title-bar">
+                        <div class="title-bar-text">Problems &amp; Solutions</div>
+                        <div class="title-bar-controls">
+                            <button type="button" aria-label="Minimize"></button>
+                            <button type="button" aria-label="Maximize"></button>
+                            <button type="button" aria-label="Close"></button>
+                        </div>
+                    </div>
+                    <div class="window-body prog-detail-body">
+                        <ul>
+                            <li>The Problem: Using all the selectors in a meaningful way to contribute to my design of the website was difficult.</li>
+                            <li>The Solution: I tweaked the little things such as font size and details that might elevate the aesthetics.</li>
+                            <li>The Problem: Finding an aesthetic that I wanted to use was pretty difficult. I spent hours trying to find a theme for my design.</li>
+                            <li>The Solution: I thought about the media and entertainment that I really liked and looked at those aesthetics closely, which helped me finally decide on the aesthetic.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="window active win7-window prog-detail-window prog-view-animate detail-panel detail-panel--left">
+                    <div class="title-bar">
+                        <div class="title-bar-text">Concepts learned</div>
+                        <div class="title-bar-controls">
+                            <button type="button" aria-label="Minimize"></button>
+                            <button type="button" aria-label="Maximize"></button>
+                            <button type="button" aria-label="Close"></button>
+                        </div>
+                    </div>
+                    <div class="window-body prog-detail-body">
+                        <ul>
+                            <li>CSS Styling: I had a basic knowledge of CSS selectors and only knew a few. In this project, my understanding increased and the usage of 42+ selectors helped my knowledge overall.</li>
+                            <li>Graphic Design: For my main aesthetic, I had to design graphics for my headers. based on a video game aesthetic that I found to be cool to use.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="window active win7-window prog-detail-window prog-view-animate detail-panel detail-panel--right">
+                    <div class="title-bar">
+                        <div class="title-bar-text">Habits of Mind</div>
+                        <div class="title-bar-controls">
+                            <button type="button" aria-label="Minimize"></button>
+                            <button type="button" aria-label="Maximize"></button>
+                            <button type="button" aria-label="Close"></button>
+                        </div>
+                    </div>
+                    <div class="window-body prog-detail-body">
+                        <ul>
+                            <li>Creativity and Innovation: Designing graphics and how I would execute my design expanded my creativity.</li>
+                            <li>Application of Past Knowledge: Previously, I had done many CSS exercises to help me with layouts, so I applied that knowledge to help change the layout of my design.</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <div id="detail-budgetcalc" class="programming-detail" hidden>
+            <div class="programming-detail-top">
+                <button type="button" class="programming-back" aria-label="Back to projects">
+                    <svg class="programming-back-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z" />
+                    </svg>
+                </button>
+            </div>
+            <div class="programming-detail-scroll">
+                <section class="window active win7-window prog-detail-window prog-detail-hero-screen detail-panel detail-panel--left">
+                    <div class="title-bar">
+                        <div class="title-bar-text">Budget Calculator — Overview</div>
+                        <div class="title-bar-controls">
+                            <button type="button" aria-label="Minimize"></button>
+                            <button type="button" aria-label="Maximize"></button>
+                            <button type="button" aria-label="Close"></button>
+                        </div>
+                    </div>
+                    <div class="window-body prog-detail-body">
+                        <img class="prog-detail-hero" src="imgs/budgetcalc.png" width="120" height="90" alt="">
+                        <h2>Project 3 Budget Calculator</h2>
+                        <p class="prog-detail-site">
+                            <a href="https://eecu-budget-calculadora.netlify.app/" target="_blank" rel="noopener noreferrer">https://eecu-budget-calculadora.netlify.app/</a>
+                        </p>
+                        <p>A web-based budget calculator representing EECU that helps users calculate their expenses and manage their finances in a simple way.</p>
+                    </div>
+                </section>
+
+                <section class="window active win7-window prog-detail-window prog-view-animate detail-panel detail-panel--right">
+                    <div class="title-bar">
+                        <div class="title-bar-text">Problems &amp; Solutions</div>
+                        <div class="title-bar-controls">
+                            <button type="button" aria-label="Minimize"></button>
+                            <button type="button" aria-label="Maximize"></button>
+                            <button type="button" aria-label="Close"></button>
+                        </div>
+                    </div>
+                    <div class="window-body prog-detail-body">
+                        <ul>
+                            <li>The Problem: I struggled with figuring out how to code a live visual chart in JavaScript</li>
+                            <li>The Solution: I looked at the chart.js website to get some help on setting it up and did an exercise to understand the logic.</li>
+                            <li>The Problem: Many students worked on my project and rotated through each person. The problem that came from this was that when someone didn’t fully complete what they wanted to do on my website, they didn’t leave a comment, leaving the next person to possibly mess up the site or change something.</li>
+                            <li>The Solution: I had to tell the next person what they did and didn’t finish</li>
+                            <li>The Problem: Styling the website was difficult because I had to make the layout accurate to the Figma.</li>
+                            <li>The Solution: Eventually, I had to compromise and go for a different layout, which was fine and was similar to what I had prototyped.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="window active win7-window prog-detail-window prog-view-animate detail-panel detail-panel--left">
+                    <div class="title-bar">
+                        <div class="title-bar-text">Concepts learned</div>
+                        <div class="title-bar-controls">
+                            <button type="button" aria-label="Minimize"></button>
+                            <button type="button" aria-label="Maximize"></button>
+                            <button type="button" aria-label="Close"></button>
+                        </div>
+                    </div>
+                    <div class="window-body prog-detail-body">
+                        <ul>
+                            <li>Persistence: Doing some of the code and styling it took a lot of time. Overall, the coding was really challenging, but I just kept going no matter what.</li>
+                            <li>Communication: During the project, many other students helped code my website, so I had to communicate with them to get what I wanted out of their work time.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="window active win7-window prog-detail-window prog-view-animate detail-panel detail-panel--right">
+                    <div class="title-bar">
+                        <div class="title-bar-text">Habits of Mind</div>
+                        <div class="title-bar-controls">
+                            <button type="button" aria-label="Minimize"></button>
+                            <button type="button" aria-label="Maximize"></button>
+                            <button type="button" aria-label="Close"></button>
+                        </div>
+                    </div>
+                    <div class="window-body prog-detail-body">
+                        <ul>
+                            <li>Creativity and Innovation: Designing graphics and how I would execute my design expanded my creativity.</li>
+                            <li>Application of Past Knowledge: Previously, I had done many CSS exercises to help me with layouts, so I applied that knowledge to help change the layout of my design.</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <nav class="taskbar">
+        <div class="taskbar-start">
+            <button type="button" class="taskbar-start-btn" aria-label="Start">
+                <img src="imgs/start.png" class="taskbar-orb" width="38" height="38" alt="" decoding="async">
+            </button>
+        </div>
+        <div class="taskbar-quick">
+            <a class="taskbar-pin" href="home.html" title="Home">
+                <img src="imgs/world.png" width="24" height="24" alt="">
+            </a>
+            <a class="taskbar-pin" href="aboutme.html" title="About Me">
+                <img src="imgs/avatar.png" width="24" height="24" alt="">
+            </a>
+            <a class="taskbar-pin" href="programming.html" title="Programming">
+                <img src="imgs/computadora.png" width="24" height="24" alt="">
+            </a>
+            <a class="taskbar-pin" href="writing.html" title="Writing">
+                <img src="imgs/write.png" width="24" height="24" alt="">
+            </a>
+            <a class="taskbar-pin" href="contact.html" title="Contact">
+                <img src="imgs/connection.png" width="24" height="24" alt="">
+            </a>
+            <a class="taskbar-pin" href="resume.html" title="Resume">
+                <img src="imgs/resume.png" width="24" height="24" alt="Resume">
+            </a>
+        </div>
+        <div class="taskbar-spacer"></div>
+        <div class="taskbar-tray">
+            <div class="taskbar-tray-glyphs">
+                <span class="taskbar-tray-icon">
+                    <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                        <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                    </svg>
+                </span>
+                <span class="taskbar-tray-icon">
+                    <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor">
+                        <path d="M3 14V8l5-3 5 3v6H3z" opacity="0.85" />
+                    </svg>
+                </span>
+                <span class="taskbar-tray-icon">
+                    <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                        <rect x="2" y="5" width="6" height="5" rx="0.5" stroke="currentColor" stroke-width="1.2" />
+                        <rect x="8" y="6" width="6" height="4" rx="0.5" stroke="currentColor" stroke-width="1.2" />
+                    </svg>
+                </span>
+                <span class="taskbar-tray-icon">
+                    <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                        <path d="M4 10c1.5-2 6.5-2 8 0" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" />
+                        <path d="M6 6h4M8 4v4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" />
+                    </svg>
+                </span>
+            </div>
+            <div class="taskbar-clock">
+                <time id="taskbar-time" datetime="">
+                    <span class="taskbar-clock-time"></span>
+                    <span class="taskbar-clock-date"></span>
+                </time>
+            </div>
+        </div>
+        <button type="button" class="show-desktop" aria-label="Show desktop"></button>
+    </nav>
+
+    <script src="button-ding.js"></script>
+    <script src="draggable-windows.js"></script>
+    <script src="bubbles.js" defer></script>
+    <script src="page-bgm.js" data-src="audio/music/Customize.mp3" defer></script>
+    <script src="taskbar-clock.js"></script>
+    <script src="programming.js"></script>
 </body>
 
 </html>

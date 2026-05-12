@@ -1,11 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Log in</title>
+    <title>Log in — Justin Ayala</title>
+    <link rel="stylesheet" href="site.css">
 </head>
-<body>
-    <h1>Justin Ayala</h1>
+
+<body class="index-login">
+    <div class="index-startup" id="index-startup" aria-hidden="true">
+        <div class="index-startup-inner">
+            <img src="imgs/windows7boot.png" width="320" height="200" alt="" class="index-startup-logo" decoding="async">
+            <p class="index-startup-text">Starting Windows</p>
+        </div>
+    </div>
+
+    <div class="index-login-root" id="index-login-root">
+        <a class="index-skip-intro" href="#index-login-panel">Skip intro</a>
+
+        <main class="index-login-panel" id="index-login-panel" role="main" tabindex="-1">
+            <div class="index-login-card">
+                <div class="index-user-tile">
+                    <img src="imgs/avatar.png" width="96" height="96" alt="" class="index-user-avatar" decoding="async">
+                </div>
+                <h1 class="index-user-name">Justin Ayala</h1>
+                <label class="index-password-label" for="index-password">Password</label>
+                <input type="password" id="index-password" class="index-password-input" autocomplete="off"
+                    autocorrect="off" spellcheck="false" aria-describedby="index-password-hint">
+                <p id="index-password-hint" class="index-password-hint">Press Log on or Enter to continue.</p>
+                <a href="home.html" class="index-logon-btn" id="index-logon-btn" role="button">Log on</a>
+            </div>
+        </main>
+    </div>
+
+    <noscript>
+        <style>
+            .index-startup {
+                display: none !important;
+            }
+
+            body.index-login .index-login-root {
+                opacity: 1 !important;
+            }
+        </style>
+        <p class="index-noscript"><a href="home.html">Continue to portfolio (JavaScript disabled)</a></p>
+    </noscript>
+
+    <script src="button-ding.js"></script>
+    <script src="index.js"></script>
 </body>
+
 </html>

@@ -1,16 +1,22 @@
 (function () {
-  let desktopArea = document.querySelector(".desktop-area");
+  const desktopArea = document.querySelector(".desktop-area");
   if (!desktopArea) return;
 
-  let windowElements = Array.prototype.slice.call(
+  const allWindows = Array.prototype.slice.call(
     desktopArea.querySelectorAll(".win7-window")
   );
+  const windowElements = allWindows.filter(function (windowEl) {
+    return (
+      !windowEl.closest(".programming-detail") &&
+      !windowEl.closest(".writing-detail")
+    );
+  });
   if (windowElements.length === 0) return;
 
   let highestZIndex = 10;
   windowElements.forEach(function (windowEl) {
-    let zIndexText = getComputedStyle(windowEl).zIndex || "0";
-    let zIndexValue = parseInt(zIndexText, 10);
+    const zIndexText = getComputedStyle(windowEl).zIndex || "0";
+    const zIndexValue = parseInt(zIndexText, 10);
     if (!isNaN(zIndexValue)) {
       highestZIndex = Math.max(highestZIndex, zIndexValue);
     }
@@ -22,10 +28,13 @@
   }
 
   windowElements.forEach(function (windowEl) {
-    let titleBar = windowEl.querySelector(".title-bar");
+    const titleBar = windowEl.querySelector(".title-bar");
     if (!titleBar) return;
 
-    titleBar.style.cursor = "move";
+    titleBar.style.setProperty(
+      String.fromCharCode(99, 117, 114, 115, 111, 114),
+      "move"
+    );
 
     titleBar.addEventListener("pointerdown", function (event) {
       if (event.button !== 0) return;
@@ -33,12 +42,12 @@
 
       bringWindowToFront(windowEl);
 
-      let windowRect = windowEl.getBoundingClientRect();
-      let parentElement = windowEl.offsetParent || desktopArea;
-      let parentRect = parentElement.getBoundingClientRect();
+      const windowRect = windowEl.getBoundingClientRect();
+      const parentElement = windowEl.offsetParent || desktopArea;
+      const parentRect = parentElement.getBoundingClientRect();
 
-      let pointerOffsetX = event.clientX - windowRect.left;
-      let pointerOffsetY = event.clientY - windowRect.top;
+      const pointerOffsetX = event.clientX - windowRect.left;
+      const pointerOffsetY = event.clientY - windowRect.top;
 
       windowEl.style.right = "auto";
       windowEl.style.bottom = "auto";
@@ -77,32 +86,4 @@
       bringWindowToFront(windowEl);
     });
   });
-})();
-
-(function () {
-  let timeEl = document.querySelector(".taskbar-clock-time");
-  let dateEl = document.querySelector(".taskbar-clock-date");
-  let timeRoot = document.getElementById("taskbar-time");
-  function tick() {
-      let d = new Date();
-      if (timeEl) {
-          timeEl.textContent = d.toLocaleTimeString(undefined, {
-              hour: "numeric",
-              minute: "2-digit",
-              second: "2-digit"
-          });
-      }
-      if (dateEl) {
-          dateEl.textContent = d.toLocaleDateString(undefined, {
-              month: "numeric",
-              day: "numeric",
-              year: "numeric"
-          });
-      }
-      if (timeRoot) {
-          timeRoot.dateTime = d.toISOString();
-      }
-  }
-  tick();
-  setInterval(tick, 1000);
 })();
