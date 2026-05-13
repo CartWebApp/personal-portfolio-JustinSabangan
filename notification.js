@@ -50,6 +50,11 @@
       img: "imgs/natsuki.jpg",
       title: "New Message",
       text: "It's not like I like you or anything!"
+    },
+    {
+      img: "imgs/nathan.jpg",
+      title: "New Message",
+      text: "It's a fair value gap! "
     }
   ];
 
@@ -78,7 +83,7 @@
 
   function showToast() {
     if (!toast) createToast();
-
+// pick a random notification
     const pick = notifications[Math.floor(Math.random() * notifications.length)];
     toast.querySelector(".win7-notification-icon img").src = pick.img;
     toast.querySelector(".win7-notification-title").textContent = pick.title;
@@ -92,7 +97,7 @@
     clearTimeout(timeout);
     timeout = setTimeout(hideToast, DISPLAY_DURATION);
   }
-
+//
   function hideToast() {
     if (!toast) return;
     toast.classList.remove("show");

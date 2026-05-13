@@ -1,15 +1,18 @@
+// checking if on mobile by trying to match screen size
 (function () {
   const isMobile =
     typeof window.matchMedia === "function" &&
     window.matchMedia("(max-width: 768px), (pointer: coarse)").matches;
   if (isMobile) return;
 
+  // stop script entirely on mobile devices (made this because its too weird to drag on mobile)
   const desktopArea = document.querySelector(".desktop-area");
   if (!desktopArea) return;
-
+  // get container of desktop
   const allWindows = Array.prototype.slice.call(
     desktopArea.querySelectorAll(".win7-window")
   );
+  // convert these into array and filter ones in programming/writing html pages
   const windowElements = allWindows.filter(function (windowEl) {
     return (
       !windowEl.closest(".programming-detail") &&
@@ -17,7 +20,7 @@
     );
   });
   if (windowElements.length === 0) return;
-
+// get highest z-index among the windows to make sure the dragged window appears above others, basically giving it a valiue and comparing it to others
   let highestZIndex = 10;
   windowElements.forEach(function (windowEl) {
     const zIndexText = getComputedStyle(windowEl).zIndex || "0";
@@ -26,19 +29,19 @@
       highestZIndex = Math.max(highestZIndex, zIndexValue);
     }
   });
-
+// increasing z-index, make window appear above others
   function bringWindowToFront(windowEl) {
     highestZIndex += 1;
     windowEl.style.zIndex = String(highestZIndex);
   }
-
+// for pointer down on certain parts
   windowElements.forEach(function (windowEl) {
     const titleBar = windowEl.querySelector(".title-bar");
     if (!titleBar) return;
 
     const pickerCard = windowEl.classList.contains("win-picker");
     const dragHandle = pickerCard ? windowEl : titleBar;
-
+// cursor stylistico!
     dragHandle.style.setProperty(
       String.fromCharCode(99, 117, 114, 115, 111, 114),
       pickerCard ? "default" : "move"
@@ -49,7 +52,7 @@
         "move"
       );
     }
-
+// preventing dragging on certain stuff like title bar controls
     function shouldStartDrag(event) {
       const t = event.target;
       if (!t || !t.closest) return false;
@@ -61,7 +64,7 @@
       }
       return titleBar.contains(t);
     }
-
+// for pointer down on the window, bring it to front
     windowEl.addEventListener("pointerdown", function (event) {
       if (event.button !== 0) return;
       if (event.target && event.target.closest(".title-bar-controls")) return;

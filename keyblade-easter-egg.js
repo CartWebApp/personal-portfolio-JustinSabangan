@@ -1,3 +1,4 @@
+// only implementing this on programming page because thats where I want this easter egg
 (function () {
   if (document.documentElement.getAttribute("data-page") !== "programming") {
     return;
@@ -9,11 +10,11 @@
   const img = btn.querySelector("img");
   const audio = new Audio("audio/music/sfx/kh-level-up.mp3");
   audio.preload = "auto";
-
+// this is like accessibility so liek if user has reduced motion on then
   const reducedMotion =
     typeof window.matchMedia === "function" &&
     window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
+// it wont do spin animation
   const BOTTOM_SLACK_PX = 56;
   let boundScrollEl = null;
 
@@ -29,7 +30,7 @@
   function hideKeyblade() {
     btn.classList.remove("keyblade-hit--revealed");
   }
-
+// keyblade appears when scrolling to bottom
   function detachScroll() {
     if (boundScrollEl) {
       boundScrollEl.removeEventListener("scroll", onScrollEl);
@@ -51,6 +52,7 @@
       hideKeyblade();
       return;
     }
+    // hide it if not on bottom basically but if at bottom then show 
     const remaining = el.scrollHeight - el.scrollTop - el.clientHeight;
     if (remaining <= BOTTOM_SLACK_PX) {
       showKeyblade();
@@ -73,13 +75,12 @@
     }
     syncKeybladeFromScroll();
   }
-
   function onDomMutations() {
     requestAnimationFrame(function () {
       bindVisibleScroll();
     });
   }
-
+//
   const bodyMo = new MutationObserver(onDomMutations);
   bodyMo.observe(document.body, {
     attributes: true,
@@ -98,6 +99,7 @@
 
   bindVisibleScroll();
 
+  // sparkles appear on keyblade hit, this is how I made it
   function spawnSparkles() {
     if (reducedMotion) return;
     const rect = btn.getBoundingClientRect();

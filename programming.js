@@ -6,7 +6,7 @@
     zengarden: document.getElementById("detail-zengarden"),
     budgetcalc: document.getElementById("detail-budgetcalc")
   };
-
+// function to hide all details when opening a new project
   function hideAllDetails() {
     const keys = Object.keys(detailByKey);
     for (let k = 0; k < keys.length; k++) {
@@ -35,7 +35,7 @@
     }
     window.scrollTo(0, 0);
   }
-
+// go back to the 3 windows with the projects when clicking back button
   function backToPicker() {
     document.body.classList.remove("programming-detail-open");
     if (projectPicker) {
@@ -44,8 +44,7 @@
     }
     hideAllDetails();
     window.scrollTo(0, 0);
-  }
-
+  } 
   const openButtons = document.querySelectorAll("[data-open]");
   for (let b = 0; b < openButtons.length; b++) {
     openButtons[b].addEventListener("click", function () {

@@ -10,7 +10,7 @@
   if (reducedMotion) {
     return;
   }
-
+// how much bubbles can spawn
   const MAX_BUBBLES = 32;
   const SPAWN_MIN_MS = 450;
   const SPAWN_MAX_MS = 1300;
