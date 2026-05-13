@@ -382,6 +382,7 @@ html[data-page="home"] body.desktop{
 }
 
 html[data-page="home"] .desktop-area{
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -829,6 +830,7 @@ html[data-page="about"] .desktop-area{
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 16px;
     min-height: calc(100vh - 40px);
     padding: clamp(12px, 3vw, 28px) clamp(12px, 2vw, 24px) clamp(80px, 18vw, 120px);
     --win-edge-x: clamp(18px, 2.8vw, 40px);
@@ -838,7 +840,7 @@ html[data-page="about"] .desktop-area{
 }
 
 html[data-page="about"] .win7 .win7-window.window{
-    position: absolute;
+    position: relative;
 }
 
 html[data-page="about"] .win7-window{
@@ -849,32 +851,6 @@ html[data-page="about"] .win7-window{
 
 html[data-page="about"] .win7-window .title-bar{
     user-select: none;
-}
-
-
-html[data-page="about"] .desktop-area.win7 .window > .title-bar{
-    padding-block-start: 0 !important;
-    margin-block-start: 0 !important;
-    align-items: flex-start;
-}
-
-html[data-page="about"] .desktop-area.win7 .window > .title-bar .title-bar-text{
-    padding-top: 0 !important;
-    padding-block-start: 0 !important;
-}
-
-html[data-page="about"] .desktop-area.win7 .window > .title-bar .title-bar-controls{
-    align-self: stretch;
-    margin-block-start: 0 !important;
-    padding-block-start: 0 !important;
-    margin-left: auto;
-    display: flex;
-    align-items: stretch;
-}
-
-html[data-page="about"] .desktop-area.win7 .window > .title-bar .title-bar-controls button{
-    align-self: stretch;
-    margin-block-start: 0 !important;
 }
 
 html[data-page="about"] .win7-window .title-bar-text{
@@ -909,13 +885,13 @@ html[data-page="about"] .win-achievements{
 }
 
 html[data-page="about"] .about-body{
-    margin: 6px;
+    margin: 0 var(--w7-w-space) var(--w7-w-space);
     border: 0;
     background: linear-gradient(180deg, rgba(252, 252, 252, 0.98) 0%, rgba(245, 247, 250, 0.96) 100%);
     display: grid;
     gap: 14px;
     padding: 14px 16px 16px;
-    border-radius: 2px;
+    border-radius: 0 0 var(--w7-w-bdr) var(--w7-w-bdr);
 }
 
 html[data-page="about"] .about-top{
@@ -1021,7 +997,7 @@ html[data-page="about"] .about-figure{
 }
 
 html[data-page="about"] .resume-body{
-    margin: 6px;
+    margin: 0 var(--w7-w-space) var(--w7-w-space);
     border: 0;
     background: linear-gradient(180deg, rgba(252, 252, 252, 0.98) 0%, rgba(240, 244, 248, 0.95) 100%);
     display: flex;
@@ -1029,6 +1005,7 @@ html[data-page="about"] .resume-body{
     align-items: center;
     gap: 12px;
     padding: 14px 14px 16px;
+    border-radius: 0 0 var(--w7-w-bdr) var(--w7-w-bdr);
 }
 
 html[data-page="about"] .resume-download{
@@ -1081,12 +1058,13 @@ html[data-page="about"] .resume-arrow{
 }
 
 html[data-page="about"] .disc-body{
-    margin: 6px;
+    margin: 0 var(--w7-w-space) var(--w7-w-space);
     border: 0;
     background: linear-gradient(180deg, rgba(250, 250, 250, 0.98) 0%, rgba(238, 242, 246, 0.96) 100%);
     display: grid;
     place-items: center;
     padding: 14px 12px;
+    border-radius: 0 0 var(--w7-w-bdr) var(--w7-w-bdr);
 }
 
 html[data-page="about"] .disc-img{
@@ -1100,12 +1078,12 @@ html[data-page="about"] .disc-img{
 }
 
 html[data-page="about"] .achievements-body{
-    margin: 6px;
+    margin: 0 var(--w7-w-space) var(--w7-w-space);
     border: 0;
     background: linear-gradient(180deg, rgba(252, 252, 252, 0.98) 0%, rgba(245, 247, 250, 0.96) 100%);
     padding: 14px 16px 16px;
     line-height: 1.5;
-    border-radius: 2px;
+    border-radius: 0 0 var(--w7-w-bdr) var(--w7-w-bdr);
 }
 
 html[data-page="about"] .achievements-body p{
@@ -1461,6 +1439,29 @@ html[data-page="contact"] .contact-submit{
     min-width: 0;
 }
 
+html[data-page="contact"] .contact-hint{
+    grid-column: 1 / -1;
+    margin: 0;
+    font-size: 11px;
+    line-height: 1.35;
+    color: #555;
+    text-align: center;
+    max-width: 42em;
+    justify-self: center;
+}
+
+html[data-page="contact"] .contact-bubble a{
+    color: inherit;
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+html[data-page="contact"] .contact-bubble a:hover,
+html[data-page="contact"] .contact-bubble a:focus-visible{
+    color: #06c;
+}
+
 html[data-page="contact"] .taskbar{
     position: fixed;
     left: 0;
@@ -1728,12 +1729,14 @@ html[data-page="programming"] #project-picker[hidden]{
 }
 
 html[data-page="programming"] .win-picker{
-    position: relative !important;
-    left: auto !important;
-    right: auto !important;
-    top: auto !important;
-    bottom: auto !important;
-    transform: none !important;
+    touch-action: none;
+    user-select: none;
+    position: relative;
+    left: auto;
+    right: auto;
+    top: auto;
+    bottom: auto;
+    transform: none;
     width: min(360px, 100%);
     max-width: 100%;
     filter: drop-shadow(4px 4px 14px rgba(0, 0, 0, 0.35));
@@ -1758,7 +1761,7 @@ html[data-page="programming"] .prog-picker-body{
 html[data-page="programming"] .prog-picker-thumb{
     display: block;
     width: 100%;
-    padding: 0;
+    padding: 8px;
     margin: 0 auto;
     border: 1px solid rgba(120, 160, 210, 0.55);
     border-radius: 8px;
@@ -1776,11 +1779,13 @@ html[data-page="programming"] .prog-picker-thumb:hover, html[data-page="programm
 
 html[data-page="programming"] .prog-picker-thumb img{
     display: block;
-    width: 100%;
+    width: auto;
     height: auto;
-    object-fit: cover;
-    aspect-ratio: 11 / 8;
-    vertical-align: middle;
+    max-width: 100%;
+    max-height: min(52vh, 320px);
+    margin: 0 auto;
+    object-fit: contain;
+    object-position: center;
 }
 
 html[data-page="programming"] .prog-picker-hint{
@@ -1835,7 +1840,7 @@ html[data-page="programming"] body.programming-detail-open .programming-detail:n
     border: none;
     box-shadow: none;
     background: transparent;
-    padding: 62px 8px clamp(100px, 24dvh, 260px) 8px;
+    padding: clamp(108px, 14dvh, 148px) 12px clamp(100px, 24dvh, 260px) 12px;
     gap: 32px;
     overscroll-behavior: contain;
     
@@ -1871,6 +1876,8 @@ html[data-page="programming"] .programming-back{
     padding: 0;
     border: 1px solid rgba(255, 255, 255, 0.72);
     border-radius: 50%;
+    overflow: hidden;
+    isolation: isolate;
     
     color: #0a4a78;
     background:
@@ -1886,13 +1893,10 @@ html[data-page="programming"] .programming-back{
     -webkit-tap-highlight-color: transparent;
 }
 
-html[data-page="programming"] .programming-back::before{
-    content: "";
-    position: absolute;
-    inset: 4px;
-    border-radius: 50%;
-    pointer-events: none;
-    background: linear-gradient(155deg, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0.12) 36%, transparent 48%);
+html[data-page="programming"] .programming-back::before,
+html[data-page="programming"] .programming-back::after{
+    content: none !important;
+    display: none !important;
 }
 
 html[data-page="programming"] .programming-back-icon{
@@ -1958,6 +1962,57 @@ html[data-page="programming"] .programming-detail-scroll{
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(180, 210, 255, 0.08) 100%);
     border: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
+    scrollbar-width: thin;
+    scrollbar-color: #4ec0e0 rgba(200, 238, 255, 0.42);
+}
+
+html[data-page="programming"] .programming-detail-scroll::-webkit-scrollbar,
+html[data-page="writing"] .writing-detail-scroll::-webkit-scrollbar{
+    width: 13px;
+    height: 13px;
+}
+
+html[data-page="programming"] .programming-detail-scroll::-webkit-scrollbar-button,
+html[data-page="writing"] .writing-detail-scroll::-webkit-scrollbar-button{
+    width: 0;
+    height: 0;
+    display: none;
+}
+
+html[data-page="programming"] .programming-detail-scroll::-webkit-scrollbar-track,
+html[data-page="writing"] .writing-detail-scroll::-webkit-scrollbar-track{
+    background: linear-gradient(180deg, rgba(236, 252, 255, 0.65) 0%, rgba(190, 232, 250, 0.5) 45%, rgba(165, 218, 242, 0.45) 100%);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: inset 0 1px 4px rgba(0, 70, 110, 0.1), inset 0 -1px 0 rgba(255, 255, 255, 0.35);
+    margin: 5px 0;
+}
+
+html[data-page="programming"] .programming-detail-scroll::-webkit-scrollbar-thumb,
+html[data-page="writing"] .writing-detail-scroll::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.82);
+    background: linear-gradient(180deg, #f8feff 0%, #d2f2fc 18%, #8ee0f2 52%, #4cc8e8 82%, #2fb0dc 100%);
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.95), inset 0 -2px 5px rgba(0, 90, 130, 0.2), 0 1px 3px rgba(0, 60, 100, 0.22);
+    min-height: 40px;
+}
+
+html[data-page="programming"] .programming-detail-scroll::-webkit-scrollbar-thumb:hover,
+html[data-page="writing"] .writing-detail-scroll::-webkit-scrollbar-thumb:hover{
+    background: linear-gradient(180deg, #ffffff 0%, #e2f8fc 22%, #a8ecfa 52%, #5ad6f0 85%, #38c0e6 100%);
+    border-color: rgba(255, 255, 255, 0.95);
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 1), inset 0 -2px 4px rgba(0, 100, 140, 0.12), 0 2px 8px rgba(0, 120, 180, 0.28);
+}
+
+html[data-page="programming"] .programming-detail-scroll::-webkit-scrollbar-thumb:active,
+html[data-page="writing"] .writing-detail-scroll::-webkit-scrollbar-thumb:active{
+    background: linear-gradient(180deg, #b8e8f6 0%, #52c4e4 45%, #2098c8 100%);
+    box-shadow: inset 0 2px 8px rgba(0, 50, 90, 0.28);
+}
+
+html[data-page="programming"] .programming-detail-scroll::-webkit-scrollbar-corner,
+html[data-page="writing"] .writing-detail-scroll::-webkit-scrollbar-corner{
+    background: transparent;
 }
 
 html[data-page="programming"] .win7 .programming-detail-scroll .prog-detail-window.window{
@@ -1967,12 +2022,15 @@ html[data-page="programming"] .win7 .programming-detail-scroll .prog-detail-wind
     top: auto !important;
     bottom: auto !important;
     width: min(560px, 94%);
+    max-width: 100%;
+    min-width: 0;
+    overflow: hidden;
     filter: drop-shadow(3px 3px 10px rgba(0, 0, 0, 0.28));
     resize: none !important;
 }
 
 html[data-page="programming"] body.programming-detail-open .programming-detail-scroll .prog-detail-window.window{
-    width: min(900px, calc(100vw - 28px));
+    width: min(900px, calc(100vw - 32px));
 }
 
 html[data-page="programming"] .prog-detail-hero-screen{
@@ -1983,9 +2041,20 @@ html[data-page="programming"] .prog-detail-hero-screen{
 }
 
 html[data-page="programming"] body.programming-detail-open .prog-detail-hero-screen{
-    
     min-height: min(68dvh, calc(100dvh - 40px - 140px));
     min-height: min(68vh, calc(100vh - 40px - 140px));
+}
+
+@media (max-width: 600px) {
+    html[data-page="programming"] .prog-detail-hero-screen{
+        min-height: auto;
+    }
+    html[data-page="programming"] body.programming-detail-open .prog-detail-hero-screen{
+        min-height: auto;
+    }
+    html[data-page="programming"] body.programming-detail-open .prog-detail-hero-screen .prog-detail-hero{
+        max-height: 28vh;
+    }
 }
 
 html[data-page="programming"] .prog-detail-hero-screen .prog-detail-body{
@@ -2019,11 +2088,13 @@ html[data-page="programming"] .prog-detail-window.detail-panel--right{
 }
 
 html[data-page="programming"] .prog-detail-body{
-    margin: 6px;
+    margin: 0 var(--w7-w-space) var(--w7-w-space);
     border: 0;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(236, 244, 255, 0.92) 100%);
     padding: 12px 14px 14px;
     line-height: 1.4;
+    max-width: 100%;
+    overflow-wrap: anywhere;
 }
 
 html[data-page="programming"] body.programming-detail-open .prog-detail-body{
@@ -2079,8 +2150,24 @@ html[data-page="programming"] body.programming-detail-open .prog-detail-body li 
     margin-top: 0.55em;
 }
 
-html[data-page="programming"] body.programming-detail-open .prog-detail-window .title-bar-text{
-    font-size: clamp(15px, 2.1vw, 22px);
+html[data-page="programming"] body.programming-detail-open .programming-detail-scroll .prog-detail-window > .title-bar{
+    padding: 0 4px 2px;
+}
+
+html[data-page="programming"] body.programming-detail-open .programming-detail-scroll .prog-detail-window > .title-bar .title-bar-text{
+    font-size: clamp(13px, 1.75vw, 18px);
+    line-height: 1.2;
+    padding-top: 3px;
+    padding-bottom: 1px;
+}
+
+html[data-page="programming"] body.programming-detail-open .programming-detail-scroll .prog-detail-window > .title-bar .title-bar-controls button:not([aria-label="Close"]){
+    min-height: 17px;
+    min-width: 26px;
+}
+
+html[data-page="programming"] body.programming-detail-open .programming-detail-scroll .prog-detail-window > .title-bar .title-bar-controls button[aria-label="Close"]{
+    min-width: 40px;
 }
 
 html[data-page="programming"] .prog-detail-body::after{
@@ -2351,6 +2438,96 @@ html[data-page="programming"] .show-desktop{
     
 }
 
+html[data-page="programming"] .keyblade-hit{
+    position: fixed;
+    z-index: 99;
+    left: max(10px, env(safe-area-inset-left, 0px));
+    bottom: calc(40px + 8px);
+    padding: 4px;
+    margin: 0;
+    border: none;
+    border-radius: 10px;
+    background: rgba(8, 24, 48, 0.35);
+    box-shadow:
+        0 2px 10px rgba(0, 0, 0, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    line-height: 0;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition:
+        background 0.15s ease,
+        transform 0.15s ease,
+        opacity 0.28s ease,
+        visibility 0.28s ease;
+}
+
+html[data-page="programming"] .keyblade-hit.keyblade-hit--revealed{
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+html[data-page="programming"] .keyblade-hit.keyblade-hit--revealed:hover{
+    background: rgba(20, 50, 90, 0.5);
+}
+
+html[data-page="programming"] .keyblade-hit.keyblade-hit--revealed:focus-visible{
+    outline: 2px solid rgba(160, 210, 255, 0.95);
+    outline-offset: 2px;
+}
+
+html[data-page="programming"] .keyblade-hit img{
+    display: block;
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+    pointer-events: none;
+    transform-origin: 50% 55%;
+}
+
+html[data-page="programming"] .keyblade-hit.keyblade-spin img{
+    animation: keyblade-spin 0.75s cubic-bezier(0.45, 0.05, 0.25, 1) forwards;
+}
+
+@keyframes keyblade-spin{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(720deg);
+    }
+}
+
+html[data-page="programming"] .keyblade-sparkle{
+    position: fixed;
+    z-index: 98;
+    pointer-events: none;
+    width: 7px;
+    height: 7px;
+    margin: -3.5px 0 0 -3.5px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 25%, #fff 0%, #c8ecff 35%, rgba(120, 190, 255, 0.4) 55%, transparent 72%);
+    box-shadow: 0 0 8px 3px rgba(200, 235, 255, 0.75);
+    opacity: 0;
+}
+
+html[data-page="programming"] .keyblade-sparkle.keyblade-sparkle--burst{
+    animation: keyblade-sparkle-burst 0.58s ease-out forwards;
+}
+
+@keyframes keyblade-sparkle-burst{
+    0%{
+        opacity: 1;
+        transform: translate(0, 0) scale(1);
+    }
+    100%{
+        opacity: 0;
+        transform: translate(var(--kb-dx), var(--kb-dy)) scale(0.15);
+    }
+}
+
 
 
 html[data-page="writing"] *, html[data-page="writing"] *::before, html[data-page="writing"] *::after{
@@ -2419,12 +2596,14 @@ html[data-page="writing"] #writing-picker[hidden]{
 }
 
 html[data-page="writing"] .win-picker{
-    position: relative !important;
-    left: auto !important;
-    right: auto !important;
-    top: auto !important;
-    bottom: auto !important;
-    transform: none !important;
+    touch-action: none;
+    user-select: none;
+    position: relative;
+    left: auto;
+    right: auto;
+    top: auto;
+    bottom: auto;
+    transform: none;
     width: min(360px, 100%);
     max-width: 100%;
     filter: drop-shadow(4px 4px 14px rgba(0, 0, 0, 0.35));
@@ -2449,7 +2628,7 @@ html[data-page="writing"] .writ-picker-body{
 html[data-page="writing"] .writ-picker-thumb{
     display: block;
     width: 100%;
-    padding: 0;
+    padding: 8px;
     margin: 0 auto;
     border: 1px solid rgba(120, 160, 210, 0.55);
     border-radius: 8px;
@@ -2467,11 +2646,13 @@ html[data-page="writing"] .writ-picker-thumb:hover, html[data-page="writing"] .w
 
 html[data-page="writing"] .writ-picker-thumb img{
     display: block;
-    width: 100%;
+    width: auto;
     height: auto;
-    object-fit: cover;
-    aspect-ratio: 11 / 8;
-    vertical-align: middle;
+    max-width: 100%;
+    max-height: min(52vh, 320px);
+    margin: 0 auto;
+    object-fit: contain;
+    object-position: center;
 }
 
 html[data-page="writing"] .writ-picker-hint{
@@ -2526,7 +2707,7 @@ html[data-page="writing"] body.writing-detail-open .writing-detail:not([hidden])
     border: none;
     box-shadow: none;
     background: transparent;
-    padding: 62px 8px clamp(100px, 24dvh, 260px) 8px;
+    padding: clamp(108px, 14dvh, 148px) 12px clamp(100px, 24dvh, 260px) 12px;
     gap: 32px;
     overscroll-behavior: contain;
     
@@ -2562,6 +2743,8 @@ html[data-page="writing"] .writing-back{
     padding: 0;
     border: 1px solid rgba(255, 255, 255, 0.72);
     border-radius: 50%;
+    overflow: hidden;
+    isolation: isolate;
     
     color: #0a4a78;
     background:
@@ -2577,13 +2760,10 @@ html[data-page="writing"] .writing-back{
     -webkit-tap-highlight-color: transparent;
 }
 
-html[data-page="writing"] .writing-back::before{
-    content: "";
-    position: absolute;
-    inset: 4px;
-    border-radius: 50%;
-    pointer-events: none;
-    background: linear-gradient(155deg, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0.12) 36%, transparent 48%);
+html[data-page="writing"] .writing-back::before,
+html[data-page="writing"] .writing-back::after{
+    content: none !important;
+    display: none !important;
 }
 
 html[data-page="writing"] .writing-back-icon{
@@ -2649,6 +2829,8 @@ html[data-page="writing"] .writing-detail-scroll{
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(180, 210, 255, 0.08) 100%);
     border: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
+    scrollbar-width: thin;
+    scrollbar-color: #4ec0e0 rgba(200, 238, 255, 0.42);
 }
 
 html[data-page="writing"] .win7 .writing-detail-scroll .writ-detail-window.window{
@@ -2658,12 +2840,15 @@ html[data-page="writing"] .win7 .writing-detail-scroll .writ-detail-window.windo
     top: auto !important;
     bottom: auto !important;
     width: min(560px, 94%);
+    max-width: 100%;
+    min-width: 0;
+    overflow: hidden;
     filter: drop-shadow(3px 3px 10px rgba(0, 0, 0, 0.28));
     resize: none !important;
 }
 
 html[data-page="writing"] body.writing-detail-open .writing-detail-scroll .writ-detail-window.window{
-    width: min(900px, calc(100vw - 28px));
+    width: min(900px, calc(100vw - 32px));
 }
 
 html[data-page="writing"] .writ-detail-hero-screen{
@@ -2674,9 +2859,20 @@ html[data-page="writing"] .writ-detail-hero-screen{
 }
 
 html[data-page="writing"] body.writing-detail-open .writ-detail-hero-screen{
-    
     min-height: min(68dvh, calc(100dvh - 40px - 140px));
     min-height: min(68vh, calc(100vh - 40px - 140px));
+}
+
+@media (max-width: 600px) {
+    html[data-page="writing"] .writ-detail-hero-screen{
+        min-height: auto;
+    }
+    html[data-page="writing"] body.writing-detail-open .writ-detail-hero-screen{
+        min-height: auto;
+    }
+    html[data-page="writing"] body.writing-detail-open .writ-detail-hero-screen .writ-detail-hero{
+        max-height: 28vh;
+    }
 }
 
 html[data-page="writing"] .writ-detail-hero-screen .writ-detail-body{
@@ -2710,11 +2906,13 @@ html[data-page="writing"] .writ-detail-window.detail-panel--right{
 }
 
 html[data-page="writing"] .writ-detail-body{
-    margin: 6px;
+    margin: 0 var(--w7-w-space) var(--w7-w-space);
     border: 0;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(236, 244, 255, 0.92) 100%);
     padding: 12px 14px 14px;
     line-height: 1.4;
+    max-width: 100%;
+    overflow-wrap: anywhere;
 }
 
 html[data-page="writing"] body.writing-detail-open .writ-detail-body{
@@ -2755,8 +2953,24 @@ html[data-page="writing"] body.writing-detail-open .writ-detail-body li + li{
     margin-top: 0.55em;
 }
 
-html[data-page="writing"] body.writing-detail-open .writ-detail-window .title-bar-text{
-    font-size: clamp(15px, 2.1vw, 22px);
+html[data-page="writing"] body.writing-detail-open .writing-detail-scroll .writ-detail-window > .title-bar{
+    padding: 0 4px 2px;
+}
+
+html[data-page="writing"] body.writing-detail-open .writing-detail-scroll .writ-detail-window > .title-bar .title-bar-text{
+    font-size: clamp(13px, 1.75vw, 18px);
+    line-height: 1.2;
+    padding-top: 3px;
+    padding-bottom: 1px;
+}
+
+html[data-page="writing"] body.writing-detail-open .writing-detail-scroll .writ-detail-window > .title-bar .title-bar-controls button:not([aria-label="Close"]){
+    min-height: 17px;
+    min-width: 26px;
+}
+
+html[data-page="writing"] body.writing-detail-open .writing-detail-scroll .writ-detail-window > .title-bar .title-bar-controls button[aria-label="Close"]{
+    min-width: 40px;
 }
 
 html[data-page="writing"] .writ-detail-body::after{
@@ -3105,7 +3319,10 @@ html[data-page="resume"] .resume-doc{
 
 html[data-page="resume"] .resume-header{
     text-align: center;
-    margin-bottom: 22px;
+    margin: calc(-1 * clamp(20px, 5vw, 28px)) calc(-1 * clamp(14px, 4vw, 40px)) 22px;
+    padding: clamp(20px, 4vw, 32px) clamp(14px, 4vw, 40px);
+    background: var(--resume-navy);
+    color: #fff;
 }
 
 html[data-page="resume"] .resume-name{
@@ -3113,7 +3330,7 @@ html[data-page="resume"] .resume-name{
     font-size: clamp(1.35rem, 3.2vw, 1.75rem);
     font-weight: 700;
     letter-spacing: 0.06em;
-    color: var(--resume-navy);
+    color: #fff;
     text-transform: uppercase;
 }
 
@@ -3122,17 +3339,17 @@ html[data-page="resume"] .resume-title{
     font-size: 0.82rem;
     font-weight: 400;
     letter-spacing: 0.18em;
-    color: var(--resume-navy);
+    color: rgba(255, 255, 255, 0.85);
     text-transform: uppercase;
 }
 
 html[data-page="resume"] .resume-contact-box{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
-    gap: 12px 20px;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 32px;
     max-width: 720px;
     margin: 0 auto 26px;
-    padding: 16px 18px;
+    padding: 14px 20px;
     border: 1px solid var(--resume-border);
     background: #fafafa;
 }
@@ -3198,17 +3415,17 @@ html[data-page="resume"] .resume-section p{
 
 html[data-page="resume"] .resume-columns{
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 22px;
+    grid-template-columns: 32% 1fr;
+    gap: 0 24px;
     align-items: start;
     margin-top: 8px;
 }
 
 html[data-page="resume"] .resume-col-left{
-    padding-right: 0;
-    border-right: none;
-    border-bottom: 1px solid #c8c8c8;
-    padding-bottom: 18px;
+    padding-right: 20px;
+    border-right: 1px solid #c8c8c8;
+    border-bottom: none;
+    padding-bottom: 0;
 }
 
 html[data-page="resume"] .resume-col-right{
@@ -3217,11 +3434,17 @@ html[data-page="resume"] .resume-col-right{
 
 html[data-page="resume"] .resume-col h2{
     margin: 0 0 12px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid var(--resume-navy);
     font-size: 0.72rem;
     font-weight: 700;
     letter-spacing: 0.1em;
     color: var(--resume-navy);
     text-transform: uppercase;
+}
+
+html[data-page="resume"] .resume-block + h2{
+    margin-top: 18px;
 }
 
 html[data-page="resume"] .resume-block{
@@ -3233,9 +3456,10 @@ html[data-page="resume"] .resume-block:last-child{
 }
 
 html[data-page="resume"] .resume-dates{
-    margin: 0 0 4px;
+    margin: 0 0 2px;
     font-size: 12px;
-    color: var(--resume-muted);
+    font-weight: 700;
+    color: var(--resume-text);
 }
 
 html[data-page="resume"] .resume-school{
@@ -3270,11 +3494,11 @@ html[data-page="resume"] .resume-project:last-of-type{
 
 html[data-page="resume"] .resume-project-head{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: flex-start;
-    gap: clamp(6px, 2vw, 8px);
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
     margin-bottom: 8px;
 }
 
@@ -3306,6 +3530,23 @@ html[data-page="resume"] .resume-footer-actions{
 html[data-page="resume"] .resume-footer-actions a{
     color: #1a4a7a;
     font-weight: 600;
+}
+
+@media (max-width: 560px){
+    html[data-page="resume"] .resume-columns{
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+    html[data-page="resume"] .resume-col-left{
+        padding-right: 0;
+        border-right: none;
+        border-bottom: 1px solid #c8c8c8;
+        padding-bottom: 18px;
+    }
+    html[data-page="resume"] .resume-project-head{
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }
 
 
@@ -3499,4 +3740,110 @@ html[data-page="resume"] .show-desktop{
     
 }
 
+html[data-page="about"] .taskbar-quick,
+html[data-page="contact"] .taskbar-quick,
+html[data-page="programming"] .taskbar-quick,
+html[data-page="writing"] .taskbar-quick,
+html[data-page="resume"] .taskbar-quick{
+    max-width: none;
+    overflow-x: visible;
+    gap: 1px;
+    justify-content: flex-start;
+    flex: 0 1 auto;
+}
+
+html[data-page="about"] .taskbar-pin,
+html[data-page="contact"] .taskbar-pin,
+html[data-page="programming"] .taskbar-pin,
+html[data-page="writing"] .taskbar-pin,
+html[data-page="resume"] .taskbar-pin{
+    width: 44px;
+    height: 36px;
+}
+
+html[data-page="home"] .taskbar-quick,
+html[data-page="about"] .taskbar-quick,
+html[data-page="contact"] .taskbar-quick,
+html[data-page="programming"] .taskbar-quick,
+html[data-page="writing"] .taskbar-quick,
+html[data-page="resume"] .taskbar-quick{
+    padding-top: 2px;
+}
+
+.win7-notification{
+    position: fixed;
+    right: 16px;
+    bottom: 52px;
+    width: 300px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 12px 14px;
+    background: linear-gradient(180deg, #f6f6f6 0%, #e8e8e8 100%);
+    border: 1px solid #888;
+    border-radius: 4px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.35), 0 0 0 1px rgba(255,255,255,0.15) inset;
+    font-family: "Segoe UI", Tahoma, sans-serif;
+    color: #222;
+    z-index: 9999;
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+    transition: opacity .35s ease, transform .35s ease;
+}
+
+.win7-notification.show{
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.win7-notification.hide{
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+}
+
+.win7-notification-icon img{
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+.win7-notification-body{
+    flex: 1;
+    min-width: 0;
+}
+
+.win7-notification-title{
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 3px;
+    color: #1a1a1a;
+}
+
+.win7-notification-text{
+    font-size: 12px;
+    line-height: 1.35;
+    color: #333;
+}
+
+.win7-notification-close{
+    position: absolute;
+    top: 4px;
+    right: 6px;
+    background: none;
+    border: none;
+    font-size: 16px;
+    color: #666;
+    cursor: pointer;
+    padding: 0 4px;
+    line-height: 1;
+}
+
+.win7-notification-close:hover{
+    color: #222;
+}
 

@@ -19,6 +19,7 @@
         if (t === "submit" || t === "button" || t === "reset") hit = el;
       }
       if (!hit) return;
+      if (hit.id === "keyblade-hit") return;
       const isWinClose =
         hit.tagName === "BUTTON" &&
         hit.getAttribute("aria-label") === "Close" &&
